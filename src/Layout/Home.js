@@ -10,9 +10,11 @@ class Home extends Component {
             <Fragment>
                 <h1>문어마장</h1>
                 <ProfileZone />
-                <a href='/client' target='_blank'>
-                    <button>GAME START</button>
-                </a>
+                {this.props.profile &&
+                    <a href='/client' target='_blank'>
+                        <button>GAME START</button>
+                    </a>
+                }
             </Fragment>
         );
     }

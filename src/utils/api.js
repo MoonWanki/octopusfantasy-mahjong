@@ -13,3 +13,11 @@ export const signOut = () => axios({
     url: '/oauth/signout',
     withCredentials: true,
 })
+
+export const signUpToMahjong = nickname => axios({
+    method: 'POST',
+    data: { nickname },
+    baseURL: process.env.REACT_APP_SERVER_URL,
+    url: '/mahjong/player',
+    withCredentials: true,
+})
