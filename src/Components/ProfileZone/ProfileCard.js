@@ -3,21 +3,72 @@ import * as userActions from 'store/modules/user'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { signOut } from 'utils/api'
+import { ClickAwayListener, Grow, IconButton, Paper, Popper, ListItem, ListItemIcon, ListItemText, Icon, Divider, Avatar, ListItemAvatar } from '@material-ui/core'
 
 class ProfileCard extends Component {
 
-    handleLogout = () => {
+    state = {
+        profileMenuOpen: false,
+    }
+
+    handleSignOut = () => {
         signOut()
         .then(res => {
             window.location.reload()
         }).catch(err => alert(err))
     }
 
+    handleToggle = () => {
+        this.setState(state => ({ profileMenuOpen: !state.profileMenuOpen }))
+    }
+    
+    handleClose = event => {
+        if (this.anchorEl.contains(event.target)) {
+            return
+        }
+        this.setState({ profileMenuOpen: false })
+    }
+
     render() {
         return (
             <div>
-                <h3>{`${this.props.profile.nickname}님 안녕하세요!`}</h3>
-                <button onClick={this.handleLogout}>로그아웃</button>
+                <IconButton
+                    buttonRef={node => {
+                        this.anchorEl = node
+                    }}
+                    aria-owns={this.state.profileMenuOpen ? 'menu-list-grow' : undefined}
+                    aria-haspopup="true"
+                    onClick={this.handleToggle}
+                    style={{ width: 30, height: 30, padding: 0, margin: 10 }}>
+                    <Avatar alt="profile_image" src={this.props.profile.profileImage} style={{ width: 30, height: 30 }} />
+                </IconButton>
+                <Popper open={this.state.profileMenuOpen} anchorEl={this.anchorEl} transition disablePortal placement='bottom-end'>
+                    {({ TransitionProps, placement }) => (
+                    <Grow
+                        {...TransitionProps}
+                        id="menu-list-grow"
+                        style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                    >
+                        <Paper>
+                        <ClickAwayListener onClickAway={this.handleClose}>
+                            <ListItem>
+                                <ListItemAvatar>
+                                    <Avatar alt="profile_image" src={this.props.profile.profileImage} />
+                                </ListItemAvatar>
+                                <ListItemText primary={this.props.profile.nickname} secondary={this.props.profile.email} style={{ color: 'gray', fontWeight: 500 }} />
+                            </ListItem>
+                            <Divider />
+                            <ListItem button onClick={this.handleSignOut}>
+                                <ListItemIcon>
+                                    <Icon>exit_to_app</Icon>
+                                </ListItemIcon>
+                                <ListItemText primary="LOGOUT" />
+                            </ListItem>
+                        </ClickAwayListener>
+                        </Paper>
+                    </Grow>
+                    )}
+                </Popper>
             </div>
         )
     }

@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from 'react'
-import { Header, Carousel } from 'Components'
-import './Home.scss'
+import { Header } from 'Components'
 
-export default class Home extends Component {
-
+export default class Guide extends Component {
+    
     render() {
         return (
             <Fragment>
                 <Header />
-                <Carousel />
+                마장 정보
             </Fragment>
         )
     }

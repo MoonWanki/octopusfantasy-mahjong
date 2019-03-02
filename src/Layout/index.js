@@ -1,0 +1,5 @@
+export { default as Home } from './Home'
+export { default as Guide } from './Guide'
+export { default as Leaderboard } from './Leaderboard'
+export { default as Records } from './Records'
+export { default as NotFound } from './NotFound'

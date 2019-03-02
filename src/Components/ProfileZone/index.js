@@ -8,14 +8,12 @@ export class ProfileZone extends Component {
 	render() {
 		if(this.props.isPending) {
 			return null
-		} else if(this.props.isSignedIn) {
-			return (
-				<ProfileCard profile={this.props.profile} />
-			)
-		} else {
-			return (
-				<LoginButton />
-			)
+		}
+		else if(this.props.isSignedIn) {
+			return <ProfileCard profile={this.props.profile} />
+		}
+		else {
+			return <LoginButton />
 		}
 	}
 }

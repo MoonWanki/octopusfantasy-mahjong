@@ -1,0 +1,104 @@
+.header {
+    width: 100%;
+
+    .header-global {
+        position: relative;
+        background: white;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 101;
+
+        .header-home-logo {
+            width: 90px;
+            height: 40px;
+            background: center no-repeat gray;
+
+            @media screen and (max-width: 768px) { width: 70px; height: 26px; }
+        }
+    }
+
+    .header-main {
+        position: relative;
+        z-index: 100;
+        background: #474641;
+
+        .header-main-inner {
+
+            max-width: 1200px;
+            margin: auto;
+
+            .header-desktop {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                .header-desktop-nav {
+                    display: flex;
+    
+                    .header-desktop-logo {
+                        width: 200px;
+                        height: 90px;
+                        background: center no-repeat lightgray;
+                    }
+    
+                    .header-desktop-nav-item {
+                        height: 90px;
+                        padding: 0 40px;
+                        display: flex;
+                        align-items: center;
+                        color: white;
+        
+                        &:hover {
+                            background: rgba($color: #ffffff, $alpha: 0.1);
+                        }
+                    }
+                }
+    
+                .header-desktop-gamestart-button {
+                    width: 220px;
+                    height: 70px;
+                    margin: 10px;
+                    background: orange;
+                    &:hover {
+                        background: lighten($color: orange, $amount: 10);
+                    }
+                }
+            }
+    
+            .header-mobile {
+                display: none;
+                justify-content: space-between;
+                background: #474641;
+                align-items: center;
+    
+                .header-mobile-logo {
+                    width: 100px;
+                    height: 50px;
+                    background: center no-repeat gray;
+                }
+    
+                .header-mobile-gamestart-button {
+                    width: 200px;
+                    height: 50px;
+                    background: center no-repeat orange;
+                }
+            }
+    
+            @media screen and (max-width: 768px) {
+                .header-desktop { display: none; }
+                .header-mobile { display: flex; }
+            }
+        }
+    }
+
+    .header-drawer {
+        position: fixed;
+        width: 100%;
+        transition: top 0.5s;
+        background: white;
+        z-index: 99;
+    }
+}
