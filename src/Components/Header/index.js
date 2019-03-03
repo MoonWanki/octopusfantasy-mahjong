@@ -33,19 +33,19 @@ class Header extends Component {
                     <div className='header-main-inner'>
                         <div className='header-desktop'>
                             <div className='header-desktop-nav'>
-                                <Link className='header-desktop-logo' to='/'></Link>
+                                <Link className='header-desktop-logo' to='/' />
                                 <Link className='header-desktop-nav-item' to='/guide'>마장 정보</Link>
                                 <Link className='header-desktop-nav-item' to='/leaderboard'>랭킹</Link>
                                 <Link className='header-desktop-nav-item' to='/records'>전적</Link>
                             </div>
-                            <div className='header-desktop-gamestart-button' onClick={this.onGameStart} />
+                            <div className='header-desktop-gamestart-button' onClick={this.onGameStart}>GAME<br />START</div>
                         </div>
     
                         <div className='header-mobile'>
                             <IconButton style={{ margin: 10, padding: 10 }} onClick={() => this.setState({ drawerOn: !this.state.drawerOn })}>
                                 <Icon style={{ fontSize: 20, color: 'white' }}>{this.state.drawerOn ? 'close' : 'menu'}</Icon>
                             </IconButton>
-                            <div className='header-mobile-logo' />
+                            <Link className='header-mobile-logo' to='/' />
                             <IconButton style={{ margin: 10, padding: 10, background: 'orange' }} onClick={this.onGameStart}>
                                 <Icon style={{ fontSize: 20 }}>play_arrow</Icon>
                             </IconButton>

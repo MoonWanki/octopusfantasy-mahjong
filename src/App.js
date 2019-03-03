@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-
+import { connect } from 'react-redux'
 import { Home, Guide, Leaderboard, Records, NotFound } from 'Layout'
 import Client from 'Client'
+import { bindActionCreators } from 'redux'
+import * as userActions from 'store/modules/user'
 
-export default class App extends Component {
+class App extends Component {
 
 	componentDidMount() {
 		this.props.UserActions.fetchUser()
@@ -25,3 +27,10 @@ export default class App extends Component {
 		)
 	}
 }
+
+export default connect(
+	null,
+	dispatch => ({
+		UserActions: bindActionCreators(userActions, dispatch)
+	})
+)(App)

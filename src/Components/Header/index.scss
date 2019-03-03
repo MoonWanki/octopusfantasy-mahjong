@@ -3,32 +3,39 @@
 
     .header-global {
         position: relative;
-        background: white;
+        background: #f8f8f8;
         max-width: 1200px;
+        padding: 0 30px;
         margin: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 101;
 
-        .header-home-logo {
-            width: 90px;
-            height: 40px;
-            background: center no-repeat gray;
+        @media screen and (max-width: 768px) { padding: 0 10px; }
 
-            @media screen and (max-width: 768px) { width: 70px; height: 26px; }
+        .header-home-logo {
+            width: 100px;
+            height: 40px;
+            background: url(../../images/logo_home.png) center no-repeat;
+            background-size: contain;
+
+            @media screen and (max-width: 768px) { width: 80px; height: 20px; }
         }
     }
 
     .header-main {
         position: relative;
         z-index: 100;
-        background: #474641;
+        background: #3f3f38;
 
         .header-main-inner {
 
             max-width: 1200px;
             margin: auto;
+            padding: 0 30px;
+
+            @media screen and (max-width: 768px) { padding: 0 4px; }
 
             .header-desktop {
                 display: flex;
@@ -37,16 +44,19 @@
     
                 .header-desktop-nav {
                     display: flex;
+                    align-items: center;
     
                     .header-desktop-logo {
-                        width: 200px;
-                        height: 90px;
-                        background: center no-repeat lightgray;
+                        width: 160px;
+                        height: 70px;
+                        margin-right: 40px;
+                        background: url(../../images/logo_mahjong_white.png) center no-repeat;
+                        background-size: contain;
                     }
     
                     .header-desktop-nav-item {
                         height: 90px;
-                        padding: 0 40px;
+                        padding: 0 36px;
                         display: flex;
                         align-items: center;
                         color: white;
@@ -58,10 +68,15 @@
                 }
     
                 .header-desktop-gamestart-button {
-                    width: 220px;
+                    width: 160px;
                     height: 70px;
-                    margin: 10px;
                     background: orange;
+                    text-align: center;
+                    box-sizing: border-box;
+                    font-size: 1.85em;
+                    font-weight: 500;
+                    color: white;
+                    cursor: pointer;
                     &:hover {
                         background: lighten($color: orange, $amount: 10);
                     }
@@ -71,13 +86,13 @@
             .header-mobile {
                 display: none;
                 justify-content: space-between;
-                background: #474641;
                 align-items: center;
     
                 .header-mobile-logo {
                     width: 100px;
                     height: 50px;
-                    background: center no-repeat gray;
+                    background: url(../../images/logo_mahjong_white.png) center no-repeat;
+                    background-size: contain;
                 }
     
                 .header-mobile-gamestart-button {
