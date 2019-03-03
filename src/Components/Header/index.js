@@ -53,8 +53,7 @@ class Header extends Component {
                     </div>
                 </div>
     
-                <div className='header-drawer' style={{ top: this.state.drawerOn ? 110 : -150 }}>
-                    <Divider />
+                <div className='header-drawer' style={{ top: this.state.drawerOn ? 84 : -150 }}>
                     <Link to='/guide'>
                         <ListItem button onClick={() => this.setState({ drawerOn: false })}>
                             <ListItemIcon>
@@ -63,6 +62,7 @@ class Header extends Component {
                             <ListItemText primary="마장 정보" />
                         </ListItem>
                     </Link>
+                    <Divider />
                     <Link to='/leaderboard'>
                         <ListItem button onClick={() => this.setState({ drawerOn: false })}>
                             <ListItemIcon>
@@ -71,6 +71,7 @@ class Header extends Component {
                             <ListItemText primary="랭킹" />
                         </ListItem>
                     </Link>
+                    <Divider />
                     <Link to='/records'>
                         <ListItem button onClick={() => this.setState({ drawerOn: false })}>
                             <ListItemIcon>

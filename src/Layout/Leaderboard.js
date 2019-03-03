@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Header } from 'Components'
+import { Header, Footer } from 'Components'
 
 export default class Leaderboard extends Component {
     
@@ -7,7 +7,8 @@ export default class Leaderboard extends Component {
         return (
             <Fragment>
                 <Header />
-                리더보드
+                <div style={{ width: '100vw', height: '80vh', background: `url(${require('images/bg_tile.jpg')}) center no-repeat`, backgroundSize: 'cover' }}><p style={{ color: 'white', textAlign: 'center', margin: 0, paddingTop: '35vh', fontSize: '5vh', fontWeight: 500 }}>준비중입니다 :)</p></div>
+                <Footer />
             </Fragment>
         )
     }

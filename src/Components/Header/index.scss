@@ -68,17 +68,20 @@
                 }
     
                 .header-desktop-gamestart-button {
-                    width: 160px;
+                    width: 140px;
                     height: 70px;
                     background: orange;
                     text-align: center;
                     box-sizing: border-box;
-                    font-size: 1.85em;
+                    padding: 4px;
+                    font-size: 1.6em;
                     font-weight: 500;
                     color: white;
+                    border-radius: 10px;
+                    border: 1px solid lighten($color: orange, $amount: 30);
                     cursor: pointer;
                     &:hover {
-                        background: lighten($color: orange, $amount: 10);
+                        background: lighten($color: orange, $amount: 8);
                     }
                 }
             }
@@ -112,7 +115,7 @@
     .header-drawer {
         position: fixed;
         width: 100%;
-        transition: top 0.5s;
+        transition: top 0.4s;
         background: white;
         z-index: 99;
     }

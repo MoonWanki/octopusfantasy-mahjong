@@ -5,7 +5,7 @@
 [![Socket.IO Client](https://img.shields.io/badge/Socket.IO--Client-v2.2.0-yellowgreen.svg?style=flat-square)](https://socket.io/)  
 
 **https://mahjong.octopusfantasy.com**  
-Official website for Octo Mahjong Online, the cross-platform online mahjong service.  
+Web-based online mahjong service.  
 
 ## Dependencies
 
@@ -27,7 +27,7 @@ For real-time commonucation with server.
 - **Axios** | https://github.com/axios/axios  
 Promise based HTTP client.  
 
-## SocketIO Server  
+## Socket<span>.</span>IO Server  
 
-SocketIO Server for Octo Mahjong is combined with API server of [Octopus Fantasy](https://www.octopusfantasy.com).  
+Socket<span>.</span>IO server for Octo Mahjong is combined with API server of [Octopus Fantasy](https://www.octopusfantasy.com).  
 GitHub | https://github.com/MoonWanki/octopusfantasy-server  
